@@ -1,4 +1,4 @@
 from controller import Controller
 
 controller = Controller()
-controller.generateemails('109647')
+print(controller.generateemails('109647'))
