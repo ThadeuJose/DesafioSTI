@@ -1,5 +1,5 @@
 from database import Database
-from exception import ValueNotFoundException, InvalidStatusException
+from exception import ValueNotFoundException, InvalidStatusException, AlreadyHaveEmailException
 
 
 class Controller:
@@ -31,4 +31,5 @@ class Controller:
         INVALID_STATUS = 'Inativo'
         if row.status == INVALID_STATUS:
             raise InvalidStatusException
-        
+        if row.uffmail != '':
+            raise AlreadyHaveEmailException
