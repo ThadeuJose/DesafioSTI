@@ -7,5 +7,8 @@ class Row:
         self.uffmail = row['uffmail']
         self.status = row['status']
 
+    def __eq__(self, other):
+        return self.matricula == other.matricula
+
     def __str__(self):
-        return "{} {} {} {} {} {}".format(self.nome, self.matricula, self.telefone, self.email,self.uffmail, self.status)
+        return "{} {} {} {} {} {}".format(self.nome, self.matricula, self.telefone, self.email, self.uffmail, self.status)

@@ -27,3 +27,4 @@ class Controller:
         database = Database()
         if id not in database:
             raise ValueNotFoundException(id)
+        row = database.getrow(id)

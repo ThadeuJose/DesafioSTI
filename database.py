@@ -1,5 +1,6 @@
 import csv
 from row import Row
+from exception import ValueNotFoundException
 
 
 class Database:
@@ -13,6 +14,12 @@ class Database:
             self.csv_list = []
             for row in csv_reader:
                 self.csv_list.append(Row(row))
+
+    def getrow(self, id):
+        for row in self.csv_list:
+            if row.matricula == id:
+                return row
+        raise ValueNotFoundException(id)
 
     def __contains__(self, id):
         for row in self.csv_list:
