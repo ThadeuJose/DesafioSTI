@@ -5,7 +5,6 @@ from row import Row
 class Database:
 
     def __init__(self):
-
         filename = 'alunos.csv'
         mode = 'r'
 
@@ -14,6 +13,12 @@ class Database:
             self.csv_list = []
             for row in csv_reader:
                 self.csv_list.append(Row(row))
+
+    def __contains__(self, id):
+        for row in self.csv_list:
+            if row.matricula == id:
+                return True
+        return False
 
     def __str__(self):
         resp = ''

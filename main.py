@@ -1,4 +1,4 @@
-from database import Database
+from controller import Controller
 
-database = Database()
-print(database)
+controller = Controller()
+controller.generateEmails('109647')
