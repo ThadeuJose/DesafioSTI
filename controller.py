@@ -1,5 +1,5 @@
 from database import Database
-from exception import ValueNotFoundException
+from exception import ValueNotFoundException, InvalidStatusException
 
 
 class Controller:
@@ -28,3 +28,7 @@ class Controller:
         if id not in database:
             raise ValueNotFoundException(id)
         row = database.getrow(id)
+        INVALID_STATUS = 'Inativo'
+        if row.status == INVALID_STATUS:
+            raise InvalidStatusException
+        
