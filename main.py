@@ -1,4 +1,4 @@
-from controller import Controller
+from view import View
 
-controller = Controller()
-print(controller.generateemails('109647'))
+if __name__ == '__main__':
+    view = View()
